@@ -2,6 +2,9 @@
 #include <vector>
 using namespace std;
 
+
+// Перечислить все подматрицы, которые можно выбрать из начального фрагмента прямоугольного треугольника Паскаля 
+
 int main() {
     void PrintSubmatrix(vector<vector<int>>, int, int, int, int);
     void PrintTriangle(vector<vector<int>>);
@@ -64,11 +67,11 @@ void PrintSubmatrix(vector<vector<int>> Triangle, int LeftDownX, int LeftDownY, 
 
 // Hightlights given Submatrix in the Triangle
 void HighlightSubmatrix(vector<vector<int>> Triangle, int LeftDownX, int LeftDownY, int RightUpX, int RightUpY) {
-    cout << "  === Submatrix " << LeftDownX << ";" << LeftDownY << " => " << RightUpX << ";" << RightUpY << " ===" << endl;
+    cout << "=== Submatrix " << LeftDownX << ";" << LeftDownY << " => " << RightUpX << ";" << RightUpY << " ===" << endl;
     for (int i = 0; i < Triangle.size(); i++) {  // Iterating through rows (Y).
         for (int j = 0; j < Triangle[i].size(); j++) {   // Iterating through columns (X).
             if (i >= RightUpY && i <= LeftDownY && j >= LeftDownX && j <= RightUpX) {  // Hightligh element if it is included in Submatrix
-                printf("\033[43m%4d\033[0m", Triangle[i][j]);
+                printf("\033[44m%4d\033[0m", Triangle[i][j]);
             }
             else {
                 printf("%4d", Triangle[i][j]);
